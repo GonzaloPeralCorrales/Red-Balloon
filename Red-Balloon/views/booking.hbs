@@ -1,0 +1,23 @@
+ 
+ <form method="POST" action="booking">
+ <label for="start">Date</label>
+  <input id="date" type="date" name="date" placeholder="Enter Date">
+
+  <label for="name">People</label>
+  <input id="people" type="text" name="people" placeholder="Enter People">
+
+
+{{#each book}}
+{{this.name}}
+<input type="hidden" name="restaurantName" value="{{this.name}}">
+{{/each}}
+
+
+<button type="submit">save</button>
+</form>
+
+
+
+
+
+

@@ -15,13 +15,24 @@
   <span>myOrders</span>
 
 </form>
+
 {{#each info}}
+<form method="GET" action="/booking">
+<input type="hidden" name="restaurantName" value="{{this.name}}">
+<button type="submit">Booking</button>
 {{this.location.city}}
 {{this.name}}
+</form>
+
+<form method="GET" action="order">
+<input type="hidden" name="restaurantName" value="{{this.name}}">
+<button type="submit">Order</button>
+
+</form>
 {{/each}}
 
-this.city
- <button type="submit" >Order</button>
- <button type="submit" >Reserve</button>-->
+
+
+
 
 

@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 
 
 const bookingSchema = new Schema({
-    user:{
+    username:{
         type:String,
-        ref:userModel
+       
     },
-    business:{
+    name:{
         type:String,
-        ref:businessModel
+      
     },
     date:{
         type: Date,
@@ -21,7 +21,7 @@ const bookingSchema = new Schema({
         required: true,
     }
    
-    )}
+})
 
 
     module.exports = mongoose.model('booking',bookingSchema)

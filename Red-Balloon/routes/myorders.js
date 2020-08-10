@@ -3,7 +3,7 @@ const router  = express.Router();
 
 
 const Order = require('../models/order')
-const Restaurant = require('../models/o')
+const Restaurant = require('../models/restaurant')
 
 router.get('/myorders', (req, res) => {
     res.render('myorders.hbs')
