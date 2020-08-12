@@ -33,7 +33,13 @@ router.get('/booking', (req, res) => {
   })
 
 router.get('/mybookings', (req, res) => { 
-res.render("mybookings.hbs")
+
+  bookingModel.find({username:req.session.username})
+
+    .then((bookings)=>{
+      
+      res.render('mybookings.hbs', {bookings})
+    })   
 })
 
 

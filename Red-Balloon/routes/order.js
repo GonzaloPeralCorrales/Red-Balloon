@@ -1,9 +1,17 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
 
-const restauranteModel = require('../models/restaurant')
+const restaurantModel = require('../models/restaurant')
 
-router.get('/search', (req, res) => {
 
-    let {dish.name,dish.price} = req.params.body
-    res.render()*/
+router.get('/order', (req, res) => { 
+       
+restaurantModel.find({name:req.query.restaurantName})
+        .then((order)=>{
+            res.render('order.hbs', {order})
+          })
+})
+
+module.exports = router;
+
+

@@ -1,9 +1,13 @@
-<!--{{#each order}}
-<span>{{this.id}}</span>
-<span>{{this.date}}</span>
+<!--{{#each specific}}
+<span>{{this.name}}</span>
 <span>{{this.quantity}}</span>
+<span>{{this.image}}</span>
 
 <label for="Status">Status</label>
 <input type="text" id="Name" name="Name" placeholder="{{this.status}}" />
 
+{{/each}}
+
+{{#each specific}}
+<img src="{{this.image}}" alt={{{image}}} />
 {{/each}}-->

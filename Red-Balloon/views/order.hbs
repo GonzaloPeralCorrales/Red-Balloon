@@ -1,7 +1,46 @@
-<!--<div>
-{{#each}}    
-{{this.}}
-{{/}}
-  <button class="add">+</button>
-    <button class="reduce">-</button>
-</div>-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js">
+</script>
+
+
+{{#each order}}
+  <div class="row">
+    <div class="col-md-12">
+      {{#each dish}}
+      <p>{{this.name}}</p>
+      <input type="text" name="{{this.name}}"  id="{{this.name}}" value="0">
+      <p>{{this.price}}€</p>
+      <!-- incrementar valor dl input linea 11-->
+      <button onclick="add({{this.name}})" class="add"> + </button>
+      <button onclick="reduce({{this.name}})" class="reduce" > - </button>
+       {{/each}}
+      {{/each}}
+       <!-- incrementar valor dl total-->
+      <input type="number" name="total" value="" id="total">
+
+      
+    </div>
+    </div>
+    <button type="submit" > hi </button>
+
+
+<script>
+Handlebars.registerHelper("add", function(dish) {
+ console.log(dish)
+let input= document.getElementById(dish)
+input.value += 1
+let result= input.value + 1;
+let total= document.getElementById('total')
+total += result
+} )
+Handlebars.registerHelper("reduce", function(dish) {
+console.log(dish)
+let input= document.getElementById(dish)
+input.value -= 1
+let result= input.value - 1;
+let total= document.getElementById('total')
+total -= result
+    
+})
+</script>

@@ -23,11 +23,14 @@ const restaurantSchema = new Schema({
           
           } 
       },
+      image:{
+          type:String,
+      },
     dish:[
             {name:String,
             price:Number
             }
-          ]
+          ],
     })
 
       

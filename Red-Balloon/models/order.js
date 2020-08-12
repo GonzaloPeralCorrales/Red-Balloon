@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const orderSchema = new Schema({
     customer:{
-      type:String,
+      type:Schema.Types.ObjectId,
+      ref:"Customer"
     },  
     restaurant:{
         type:String,

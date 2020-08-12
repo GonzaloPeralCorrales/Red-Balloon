@@ -78,7 +78,7 @@ router.post('/signin', (req, res) => {
 
       let doesItMatch = bcryptjs.compareSync(password, userData.passwordHash); 
       if (doesItMatch){
-        req.session= {loggedInUser:userData}
+        req.session.loggedInUser = userData
         // loggedInUser = userData
         console.log(req.session)
         //req.session.loggedInUser = userData

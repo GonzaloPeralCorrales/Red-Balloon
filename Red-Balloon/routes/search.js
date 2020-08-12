@@ -41,12 +41,14 @@ router.get('/search', (req, res) => {
             )}
 
 
-})
+})   
 router.get('/myorders', (req, res) => {
-    res.render('myorders.hbs')
+    restauranteModel.find().where('image').equals(image)
+    .then((specific)=>{
+    res.render('myorders.hbs',{specific})
+    })
 })
 router.post('/myorders', (req, res, next) => {
-    
     res.render('myorders.hbs')
 })
 
@@ -55,4 +57,3 @@ router.post('/myorders', (req, res, next) => {
 })*/
  
 module.exports = router;
-

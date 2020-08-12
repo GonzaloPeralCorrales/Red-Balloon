@@ -11,7 +11,7 @@ const path         = require('path');
 
 
 mongoose
-  .connect('mongodb://localhost/red-ballon', {useNewUrlParser: true})
+  .connect('mongodb+srv://gonzalo:momoresultountraidor8@cluster0.q63vj.mongodb.net/red-food-balloon?retryWrites=true&w=majority', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -65,6 +65,10 @@ app.use(session({
 
 
 
+require('dotenv').config();
+
+
+
 const index = require('./routes/index');
 app.use('/', index);
 const auth = require('./routes/auth');
@@ -75,6 +79,8 @@ const search = require('./routes/search');
 app.use('/',search);
 const booking = require('./routes/booking');
 app.use('/',booking);
+const order = require('./routes/order');
+app.use('/',order);
 
 
 
